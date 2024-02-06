@@ -20,9 +20,16 @@ const Track = ({ track, onSelectTrack }) => {
     <>
       <li style={{ display: "flex", alignItems: "center", marginTop: "10px" }}>
         <div className="trackInfo">
-          {track.artist.picture && <img src={track.album.cover} style={{marginRight: "50px"}} alt="" />}
+          {track.artist.picture && (
+            <img
+              src={track.album.cover}
+              style={{ marginRight: "50px" }}
+              alt=""
+            />
+          )}
           <strong>{track.artist.name}</strong> - {track.title}
         </div>
+        <div className="albumInfo">{track.album.title}</div>
         <div>
           <button
             style={{ marginLeft: "10px" }}
