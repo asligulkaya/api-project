@@ -18,6 +18,7 @@ export default function Navbar({ setTracks }) {
           fontWeight: "800",
           fontFamily: "Open Sans, sans-serif",
           marginRight: "5rem",
+          color: "white"
         }}
       >
         DEEP SOUND

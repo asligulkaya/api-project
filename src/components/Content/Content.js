@@ -10,7 +10,8 @@ const Content = ({ tracks, setCurrentTrack }) => {
           height: "70vh",
           marginLeft: "10%",
           scrollbarWidth: "none",
-          msOverflowStyle: "none"
+          msOverflowStyle: "none",
+          color: "white"
         }}
       >
         {tracks.length > 0 ? <h4>The following results were found:</h4>  : ""}
