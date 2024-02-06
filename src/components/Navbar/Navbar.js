@@ -5,7 +5,7 @@ export default function Navbar({ setTracks }) {
   return (
     <div
       style={{
-        borderBottom: "2px solid #C7C8CC",
+        borderBottom: "2px solid rgb(92 93 99)",
         borderRadius: "5px",
         display: "flex",
         alignItems: "center",
