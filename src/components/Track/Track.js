@@ -20,7 +20,8 @@ const Track = ({ track, onSelectTrack }) => {
     <>
       <li style={{ display: "flex", alignItems: "center", marginTop: "10px" }}>
         <div className="trackInfo">
-          {track.artist.name} - {track.title}
+          {track.artist.picture && <img src={track.album.cover} style={{marginRight: "50px"}} alt="" />}
+          <strong>{track.artist.name}</strong> - {track.title}
         </div>
         <div>
           <button
@@ -40,6 +41,7 @@ const Track = ({ track, onSelectTrack }) => {
           ></audio>
         </div>
       </li>
+      <div></div>
     </>
   );
 };

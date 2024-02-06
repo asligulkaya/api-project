@@ -46,8 +46,10 @@
 
 .trackInfo {
   flex-grow: 1;
-  max-width: calc(30%);
+  max-width: calc(50%);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
 }
