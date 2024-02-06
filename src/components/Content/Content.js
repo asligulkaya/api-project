@@ -1,12 +1,13 @@
 import React from "react";
+import Track from "../Track/Track";
 
 const Content = ({ tracks }) => {
   return (
     <div style={{ fontFamily: "Open Sans, sans-serif" }}>
       {tracks.length > 0 ? (
-        <ul style={{listStyle: "none"}}>
+        <ul style={{ listStyle: "none" }}>
           {tracks.map((track) => (
-            <li key={track.id}>{track.title}</li>
+            <Track key={track.id} track={track} />
           ))}
         </ul>
       ) : (

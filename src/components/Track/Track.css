@@ -1,0 +1,53 @@
+/* Button styling */
+.buttonPlay {
+  height: 20px;
+  width: 50px;
+  position: relative;
+  background-color: transparent;
+  cursor: pointer;
+  border: 2px solid #0d9276;
+  overflow: hidden;
+  border-radius: 30px;
+  color: #0d9276;
+  transition: all 0.5s ease-in-out;
+  flex-shrink: 0;
+}
+
+.btn-txt {
+  z-index: 1;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.type2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 0.5s ease-in-out;
+  background-color: #0d9276;
+  border-radius: 30px;
+  visibility: hidden;
+  height: 10px;
+  width: 10px;
+  z-index: -1;
+}
+
+.buttonPlay:hover {
+  box-shadow: 1px 1px 200px #252525;
+  color: #fff;
+  border: none;
+}
+
+.type2:hover::after {
+  visibility: visible;
+  transform: scale(100) translateX(2px);
+}
+
+.trackInfo {
+  flex-grow: 1;
+  max-width: calc(30%);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
