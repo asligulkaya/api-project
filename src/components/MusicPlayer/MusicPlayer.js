@@ -22,6 +22,10 @@ export default function MusicPlayer({ track, isPlaying }) {
   const elapsed = ((100 * currentTime) / duration) * 10;
 
   function formatDuration(seconds) {
+    if (isNaN(seconds) || seconds === undefined) {
+      return "-- : --";
+    }
+
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;
     const formattedSeconds = remainingSeconds.toString().padStart(2, "0");
@@ -122,7 +126,7 @@ export default function MusicPlayer({ track, isPlaying }) {
         </svg>
       </div>
       <div className="time">
-        <div className="elapsed" style={{width: elapsed}}></div>
+        <div className="elapsed" style={{ width: elapsed }}></div>
       </div>
       <p className="timetext time_now">{formattedCurrentTime}</p>
       <p className="timetext time_full">{formattedDuration}</p>
