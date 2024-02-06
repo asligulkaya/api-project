@@ -4,7 +4,7 @@ const Content = ({ tracks }) => {
   return (
     <div style={{ fontFamily: "Open Sans, sans-serif" }}>
       {tracks.length > 0 ? (
-        <ul>
+        <ul style={{listStyle: "none"}}>
           {tracks.map((track) => (
             <li key={track.id}>{track.title}</li>
           ))}
