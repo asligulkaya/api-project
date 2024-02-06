@@ -13,6 +13,7 @@ const Content = ({ tracks, setCurrentTrack }) => {
           msOverflowStyle: "none"
         }}
       >
+        {tracks.length > 0 ? <h4>The following results were found:</h4>  : ""}
         {tracks.length > 0 ? (
           <ul style={{ listStyle: "none" }}>
             {tracks.map((track) => (
