@@ -9,6 +9,7 @@ export default function Navbar({ setTracks }) {
         borderRadius: "5px",
         display: "flex",
         alignItems: "center",
+        fontFamily: "Open Sans, sans-serif",
       }}
     >
       <img style={{ width: "70px" }} src={deepSound} alt="deep sound" />
