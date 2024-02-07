@@ -1,8 +1,11 @@
 import React, { useState, useRef } from "react";
 import "./Track.css";
+import Modal from "../Modal/Modal";
 
 const Track = ({ track, onSelectTrack }) => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const audioRef = useRef(null);
 
   const togglePlayPause = () => {
@@ -27,7 +30,13 @@ const Track = ({ track, onSelectTrack }) => {
               alt=""
             />
           )}
-          <strong>{track.artist.name}</strong> - {track.title}
+          <strong
+            style={{ cursor: "pointer" }}
+            onClick={() => setIsModalOpen(true)}
+          >
+            {track.artist.name}
+          </strong>{" "}
+          - {track.title}
         </div>
         <div className="albumInfo">{track.album.title}</div>
         <div>
@@ -48,6 +57,11 @@ const Track = ({ track, onSelectTrack }) => {
           ></audio>
         </div>
       </li>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        artist={track.artist}
+      />
       <div></div>
     </>
   );
