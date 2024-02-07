@@ -7,10 +7,13 @@ const Search = ({ setTracks }) => {
 
   const searchTracks = async (query) => {
     try {
+      // query boşsa varsayılan olarak "top10" kullan
+      const searchQuery = query.trim() === "" ? "top10" : query;
+
       const options = {
         method: "GET",
         url: "https://deezerdevs-deezer.p.rapidapi.com/search",
-        params: { q: query },
+        params: { q: searchQuery },
         headers: {
           "X-RapidAPI-Key":
             "d52566c1a4msh5a68782b31752e2p12d625jsn710a8da86682",
@@ -34,6 +37,12 @@ const Search = ({ setTracks }) => {
       searchTracks(query);
     }
   };
+
+  // Boş arama yapıldığında ve "top10" atanmışsa kontrol edilir
+  if (query.trim() === "" && query === "top10") {
+    console.log("Empty search with top10 parameter");
+    // Buraya istediğiniz işlemi ekleyebilirsiniz
+  }
 
   return (
     <div>
