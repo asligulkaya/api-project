@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./Search.css";
 
 const Search = ({ setTracks }) => {
   const [query, setQuery] = useState("");
 
+  useEffect(() => {
+    // Component yüklendiğinde varsayılan olarak top 10 listesini yükle
+    searchTracks("");
+  }, []); // Boş dizi, bu useEffect'in yalnızca component mount edildiğinde çalıştırılacağını belirtir
+
   const searchTracks = async (query) => {
     try {
-      // query boşsa varsayılan olarak "top10" kullan
       const searchQuery = query.trim() === "" ? "top10" : query;
 
       const options = {
@@ -37,12 +41,6 @@ const Search = ({ setTracks }) => {
       searchTracks(query);
     }
   };
-
-  // Boş arama yapıldığında ve "top10" atanmışsa kontrol edilir
-  if (query.trim() === "" && query === "top10") {
-    console.log("Empty search with top10 parameter");
-    // Buraya istediğiniz işlemi ekleyebilirsiniz
-  }
 
   return (
     <div>
