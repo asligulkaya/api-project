@@ -2,8 +2,6 @@ import React from "react";
 import Track from "../Track/Track";
 
 const Content = ({ tracks, setCurrentTrack }) => {
-  // tracks dizisinin varlığını ve uzunluğunu kontrol ederek,
-  // kullanıcıya uygun içeriği gösterir.
   return (
     <div
       style={{

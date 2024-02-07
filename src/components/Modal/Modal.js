@@ -25,7 +25,7 @@ const Modal = ({ isOpen, onClose, artist }) => {
       };
 
       const response = await axios.request(options);
-      setArtistDetails(response.data); // Set the artist details state with the response
+      setArtistDetails(response.data); 
     } catch (error) {
       console.error("Error fetching data:", error);
     }

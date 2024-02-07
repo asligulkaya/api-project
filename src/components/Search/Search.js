@@ -6,9 +6,8 @@ const Search = ({ setTracks }) => {
   const [query, setQuery] = useState("");
 
   useEffect(() => {
-    // Component yüklendiğinde varsayılan olarak top 10 listesini yükle
     searchTracks("");
-  }, []); // Boş dizi, bu useEffect'in yalnızca component mount edildiğinde çalıştırılacağını belirtir
+  }, []);
 
   const searchTracks = async (query) => {
     try {

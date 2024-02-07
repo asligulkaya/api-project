@@ -8,14 +8,14 @@ export default function MusicPlayer({ track, isPlaying }) {
   const formattedCurrentTime = formatDuration(currentTime);
 
   useEffect(() => {
-    setCurrentTime(0); // Yeni şarkıya geçildiğinde süreyi sıfırla
+    setCurrentTime(0);
 
     if (isPlaying) {
       const timer = setInterval(() => {
-        setCurrentTime((prevTime) => prevTime + 1); // Saniye olarak süreyi artır
+        setCurrentTime((prevTime) => prevTime + 1);
       }, 1000);
 
-      return () => clearInterval(timer); // Cleanup
+      return () => clearInterval(timer);
     }
   }, [track, isPlaying]);
 
